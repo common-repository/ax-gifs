@@ -1,0 +1,260 @@
+// Compile
+@font-face {
+  font-family: 'hargreavesBold';
+  src: url(Hargreaves-Bold.woff);
+}
+
+.wp-admin {
+  .gif-modal-behind {
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: black;
+    opacity: .5;
+    z-index: 1000;
+  }
+  .gif-modal-window {
+    position: fixed;
+    text-align: left;
+    max-width: 800px;
+max-height: 600px;
+    z-index: 1000000;
+    background: white;
+    top: 50%;
+    left: 0;
+    -webkit-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+            transform: translateY(-50%);
+    right: 0;
+    -webkit-box-shadow: 0 3px 6px rgba(0,0,0,.3);
+            box-shadow: 0 3px 6px rgba(0,0,0,.3);
+    margin: auto;
+    width: 80%;
+    height: 80%;
+    overflow: scroll;
+    padding: 48px;
+    padding-top: 110px;
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+            * {
+              -webkit-box-sizing: border-box;
+                 -moz-box-sizing: border-box;
+                      box-sizing: border-box;
+              font-family: 'hargreavesBold', -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
+            }
+            .logo {
+              width: 140px;
+    margin-bottom: 48px;
+            }
+    input[type="text"] {
+      width: 80%;
+      border: 1px solid black;
+      height: 44px;
+      padding: 10px;
+      font-size: 16px;
+    }
+    // .gif-search {
+    //   input[type="text"] {
+    //     width: 80%;
+    //     display: inline-block;
+    //   }
+    // }
+    button.button-primary {
+      border-radius: 0;
+      height: 44px;
+      border: none;
+      font-size: 16px;
+      text-shadow: none;
+      -webkit-box-shadow: none;
+              box-shadow: none;
+      background: #340458;
+      padding: 4px 16px;
+      color: white;
+      font-weight: bold;
+      &:focus {
+        -webkit-box-shadow: 0px 0px 0 2px #14CAC9;
+                box-shadow: 0px 0px 0 2px #14CAC9;
+      }
+    }
+    #close-modal {
+      position: absolute;
+      font-weight: bold;
+      cursor: pointer;
+      font-size: 14px;
+      -webkit-box-shadow: none;
+              box-shadow: none;
+      background: white;
+      top: 10px;
+      padding: 4px 8px;
+      right: 12px;
+      border: none;
+      border-radius: 0;
+      height: 31px;
+      text-shadow: none;
+      &:focus {
+        -webkit-box-shadow: 0px 0px 0 2px #14CAC9;
+                box-shadow: 0px 0px 0 2px #14CAC9;
+      }
+      .close-icon {
+        display: inline-block;
+        position: relative;
+        width: 15px;
+        height: 15px;
+        vertical-align: sub;
+        margin-right: 4px;
+        -webkit-transform: rotate(45deg);
+            -ms-transform: rotate(45deg);
+                transform: rotate(45deg);
+        &::before {
+          content: "";
+          background: black;
+          position: absolute;
+          width: 100%;
+          left: 0;
+          right: 0;
+          margin: auto;
+          height: 3px;
+          top: 50%;
+          -webkit-transform: translateY(-50%);
+              -ms-transform: translateY(-50%);
+                  transform: translateY(-50%);
+        }
+        &::after {
+          content: "";
+          background: black;
+          position: absolute;
+          height: 100%;
+          width: 3px;
+          left: 0;
+          right: 0;
+          margin: auto;
+          top: 50%;
+          -webkit-transform: translateY(-50%);
+              -ms-transform: translateY(-50%);
+                  transform: translateY(-50%);
+        }
+      }
+    }
+    .modal-top-bar {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: #340458;
+      padding: 16px;
+      border-radius: 0;
+      h1 {
+        margin: 0;
+        color: white;
+        font-weight: bold;
+        font-size: 20px;
+      }
+    }
+    form.gif-search {
+      position: relative;
+      input[type="text"] {
+        width: calc(100% - 92px);
+      }
+      label {
+        position: absolute;
+        top: 14px;
+        left: 14px;
+        -webkit-transition: all .3s ease;
+        -o-transition: all .3s ease;
+        transition: all .3s ease;
+        font-size: 16px;
+        pointer-events: none;
+      }
+      input.gif-search-input {
+        &:valid {
+          + label {
+            top: -32px;
+            left: 0;
+            font-size: 16px;
+            font-weight: bold;
+            color: #340458;
+          }
+        }
+      }
+    }
+    #gifresults {
+      margin-top: 24px;
+      a {
+        &:focus {
+        img {
+          opacity: 1;
+          -webkit-transform: scale(1.1);
+              -ms-transform: scale(1.1);
+                  transform: scale(1.1);
+          -webkit-box-shadow: 1px 1px 8px 0px rgba(0,0,0,0.1);
+                  box-shadow: 1px 1px 8px 0px rgba(0,0,0,0.1);
+        }
+        }
+      }
+      #load-more-gifs {
+        margin: auto;
+        margin-top: 40px;
+        display: block;
+      }
+      .img-container {
+        // display: grid;
+        // grid-template-columns: repeat(3, 1fr);
+        // -webkit-box-align: center;
+        // -webkit-align-items: center;
+        //    -moz-box-align: center;
+        //     -ms-flex-align: center;
+        //         align-items: center;
+      }
+      &:hover {
+        img {
+          opacity: .6;
+        }
+      }
+      img {
+        cursor: pointer;
+        -webkit-transition: all .2s ease;
+        -o-transition: all .2s ease;
+        transition: all .2s ease;
+        display: inline-block;
+        &:hover {
+          opacity: 1;
+          -webkit-transform: scale(1.1);
+              -ms-transform: scale(1.1);
+                  transform: scale(1.1);
+          -webkit-box-shadow: 1px 1px 8px 0px rgba(0,0,0,0.1);
+                  box-shadow: 1px 1px 8px 0px rgba(0,0,0,0.1);
+        }
+        ~ img {
+          margin: 4px;
+        }
+      }
+    }
+    #giphylogo {
+      position: relative;
+      margin-top: 24px;
+      float: right;
+      width: 140px;
+    }
+    .optional-alt {
+      display: block;
+      margin-top: 24px;
+      input[type="text"] {
+        width: 75%;
+      }
+      label {
+        font-weight: bold;
+        display: block;
+        margin-bottom: 6px;
+      }
+    }
+  }
+  .axgif {
+    background: none;
+    .gif-overlay {
+      display: none;
+    }
+  }
+}

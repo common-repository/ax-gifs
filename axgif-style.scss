@@ -1,0 +1,116 @@
+//compile
+
+.gif {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  img {
+    display: block;
+    width: 100%;
+  }
+  &.active {
+    .gif-overlay {
+      display: none;
+      .no-cssgrid & {
+        display: none;
+      }
+    }
+  }
+  p {
+    margin: 0;
+  }
+  .gif-overlay {
+    background: rgba(black, .5);
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+
+    &::before {
+      content: "GIF";
+      position: absolute;
+      top: 30%;
+      font-size: 28px;
+      text-align: center;
+      color: white;
+      font-weight: bold;
+      left: 0;
+      right: 0;
+      margin: auto;
+    }
+    &::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 0;
+      right: 0;
+      margin: auto;
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 20px 0 20px 36.6px;
+      border-color: transparent transparent transparent #ffffff;
+    }
+  }
+}
+
+.axgif {
+  background-size: cover;
+  .gif-overlay {
+    background: rgba(black, .5);
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    border: none;
+    -webkit-appearance: none;
+    -webkit-box-shadow: none;
+            box-shadow: none;
+            &::after, &::before {
+              display: none;
+            }
+    .group {
+      position: absolute;
+      left: 0;
+      right: 0;
+      margin: auto;
+      width: 90%;
+      text-align: center;
+      top: 50%;
+      -webkit-transform: translateY(-50%);
+          -ms-transform: translateY(-50%);
+              transform: translateY(-50%);
+      .play-text {
+        font-size: 28px;
+        text-align: center;
+        color: white;
+        font-weight: bold;
+        display: block;
+        width: 100%;
+      }
+      .play-button {
+        display: block;
+        width: 0;
+        margin: auto;
+        margin-top: 16px;
+        border-radius: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 20px 0 20px 36.6px;
+        border-color: transparent transparent transparent #ffffff;
+      }
+    }
+  }
+  picture {
+    opacity: 0;
+    visibility: hidden;
+  }
+  &.active {
+    picture {
+      opacity: 1;
+      visibility: visible!important;
+    }
+  }
+}
